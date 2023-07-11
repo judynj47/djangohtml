@@ -25,3 +25,9 @@ def add_product(request):
         return render(request, 'add-product.html', context)
     return render(request, 'add-product.html')
 
+
+def products(request):
+    all_products = Product.objects.all()
+    context = {"all_products": all_products}
+    return render(request, 'products.html', context)
+
