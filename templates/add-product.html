@@ -3,7 +3,7 @@
 {% block content %}
     <div>
         <h1 class="text-secondary text-center">Add Product</h1>
-        <form class="product-form" method="post" action="">
+        <form class="product-form" method="post" action="{% url 'add-product' %}">
             <p>{{ success }}</p>
             {% csrf_token %}
             <input required class="form-control" placeholder="Enter name" name="p-name" type="text"><br>
