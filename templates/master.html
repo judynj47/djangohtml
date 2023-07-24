@@ -34,18 +34,29 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'all-products' %}">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'add-product' %}"> Add Product</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'user-registration' %}">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
+
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'all-products' %}">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'add-product' %}"> Add Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user-logout' %}">Log out</a>
+                    </li>
+
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user-registration' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user-login' %}">Login</a>
+                    </li>
+
+                {% endif %}
+
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">Blog</a>
                 </li>
@@ -55,13 +66,13 @@
     </nav>
 </section>
 <section>
-     {% for message in messages %}
-         <p class="text-success">{{ message }}</p>
-     {% endfor %}
+    {% for message in messages %}
+        <p class="text-success">{{ message }}</p>
+    {% endfor %}
 
-     {% block content %}
+    {% block content %}
 
-     {% endblock %}
+    {% endblock %}
 </section>
 </body>
 </html>
