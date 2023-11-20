@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div>
-        <h1 class="text-secondary text-center">Update Product</h1>
+        <h1 class="text-secondary text-center">Update Event</h1>
         <form class="product-form" method="post" action="/update-product/{{ product.id }}">
             <p>{{ success }}</p>
             {% csrf_token %}
