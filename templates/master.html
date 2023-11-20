@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Django App</title>
+    <title>Sunflower Events</title>
     {% load static %}
     {% load crispy_forms_tags %}
     <script src="{% static 'bootstrap/js/jquery-3.4.0.js' %}"></script>
@@ -15,7 +15,7 @@
 <section>
     <nav class="navbar navbar-expand-md bg-info navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="{% url 'home-page' %}">My eCommerce</a>
+        <a class="navbar-brand" href="{% url 'home-page' %}">Sunflower Events</a>
 
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -32,15 +32,15 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+                    <a class="nav-link" href="{% url 'shop' %}">Events</a>
                 </li>
 
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'all-products' %}">Products</a>
+                        <a class="nav-link" href="{% url 'all-products' %}">Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'add-product' %}"> Add Product</a>
+                        <a class="nav-link" href="{% url 'add-product' %}"> Add Event</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'user-logout' %}">Log out</a>
